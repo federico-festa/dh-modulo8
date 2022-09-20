@@ -23,7 +23,7 @@ window.onload = function () {
     title.focus();
 
     title.addEventListener('blur', () => {
-        if (title.value == '') {
+        if (title.value.trim() == '') {
             errores.push('El titulo esta vacio');
             title.classList.add('is-invalid');
             title.placeholder = 'El titulo esta vacio';
@@ -56,7 +56,7 @@ window.onload = function () {
         if (awards.value == '') {
             errores.push('Los premios estan vacios');
             awards.classList.add('is-invalid');
-            this.placeholder = 'Este campo no puede estar vacio';
+            awards.placeholder = 'Este campo no puede estar vacio';
         } else if (awards.value > 10) {
             errores.unshift('Los premios no pueden ser mayores a 10');
             rating.classList.add('is-invalid');
@@ -72,7 +72,7 @@ window.onload = function () {
         if (release.value == '') {
             errores.push('La fecha de estreno esta vacia');
             release.classList.add('is-invalid');
-            this.placeholder = 'Este campo no puede estar vacio';
+            release.placeholder = 'Este campo no puede estar vacio';
         } else {
             release.classList.remove('is-invalid');
             release.classList.add('is-valid');
@@ -84,7 +84,7 @@ window.onload = function () {
         if (length.value == '') {
             errores.push('La duracion esta vacia');
             length.classList.add('is-invalid');
-            this.placeholder = 'Este campo no puede estar vacio';
+            length.placeholder = 'Este campo no puede estar vacio';
         } else if (length.value < 60 || length.value > 360) {
             errores.push('La duracion debe ser entre 60 y 360 minutos');
             length.classList.add('is-invalid');
@@ -101,7 +101,7 @@ window.onload = function () {
         if (genre.value == '') {
             errores.push('El genero esta vacio');
             genre.classList.add('is-invalid');
-            this.placeholder = 'Este campo no puede estar vacio';
+            genre.placeholder = 'Este campo no puede estar vacio';
         } else {
             genre.classList.remove('is-invalid');
             genre.classList.add('is-valid');
@@ -144,6 +144,7 @@ window.onload = function () {
         };
 
         if (errores.length == 0) {
+            // form.submit()
             alert('La pelicula se guardó satisfactoriamente');
         };
     });
