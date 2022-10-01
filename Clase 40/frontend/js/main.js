@@ -25,15 +25,25 @@ window.onload = () => {
       const duracion = document.createElement("p");
       duracion.textContent = `Duración: ${movie.length}`;
 
+      const acciones = document.createElement('p');
+      const linkEdit = document.createElement('a');
+      linkEdit.setAttribute('class', 'botonModificar');
+      linkEdit.setAttribute('href', 'formulario.html')
+      linkEdit.textContent = 'Editar';
+      acciones.appendChild(linkEdit);
+
       container.appendChild(card);
       card.appendChild(h1);
       card.appendChild(p);
+      card.appendChild(acciones);
       if (movie.genre !== null) {
         const genero = document.createElement("p");
         genero.textContent = `Genero: ${movie.genre.name}`;
         card.appendChild(genero);
       }
       card.appendChild(duracion);
+
+      
     });
 
   })
